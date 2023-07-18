@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de memes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- principio header -->
+    <header class="cabecera">
+            <h1 class="titulo">Generador de Memes</h1>
+            <nav class="botones-nav">
+                <button class="boton btn-img"><i class="fa-solid fa-image icono"></i>imagen</button>
+                <button class="boton btn-txt"><i class="fa-solid fa-a icono"></i>texto</button>
+                <button class="boton btn-oscuro" id="apagado-btn" aria-label="cambiar a modo oscuro"><i
+                        class="fa-solid fa-lightbulb icono"></i>modo oscuro</button>
+                <button class="boton btn-claro" id="prendido-btn" aria-label="cambiar a modo claro"><i
+                        class="fa-solid fa-lightbulb icono"></i>modo claro</button>
+            </nav>
+    </header>
+    <!-- fin header -->
+
+    <!-- comienzo main -->
+    <main>
+        <div class="container-meme">
+            <div class="t-txt">
+                <p>TOP TEXT</p>
+            </div>
+            <div class="contenedor-img">
+                
+            </div>
+            <div class="b-txt">
+                <p>BOTTOM TEXT</p>
+            </div>
+        </div>
+        <button class="btn-descargar" id="btn-descarga"><i class="fa-solid fa-download icono"></i>descargar meme</button>
+    </main>
+    <!-- fin main -->
+
+    <!-- comienzo aside -->
+
+    <aside>
+        <div class="panel-texto">
+            <h2>texto</h2>
+        </div>
+
+        <div>
+            <h3>superior</h3>
+
+            <textarea>top text</textarea>
+            <label for="sin-top-text">
+                sin texto superior
+                <imput id="sin-top-text" type="checkbox"></imput>
+            </label>
+        </div>
+        <div>
+            <h3>inferior</h3>
+            <textarea>
+               bottom text 
+            </textarea>
+
+            <div>fuente</div>
+            <div>color</div>
+            <div>fondo</div>
+            <div>contorno</div>
+            <div>espacio</div>
+            <div>interlineado</div>
+        </div>
+
+        <div class="panel-imagen">
+            <h2>imagen</h2>
+        </div>
+    </aside>
+
+    <!-- fin aside -->
+    <script src="app.js"></script>
+</body>
+
+</html>
