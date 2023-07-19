@@ -82,6 +82,28 @@ aside{
     height: 95.5%;
     right: 0%;
     top: 0%;
-    background-color: cornflowerblue ;
+    background-color: rgb(100, 237, 143) ;
     padding: 1%;
+} 
+
+.contenedor-tamanos{
+    display: flex;
+    width: 100%;
+    }
+
+.tamano-texto, .alineadores{
+    width: 50%;
+    margin: 2px;
 }
+.alineadores{
+    display: flex;
+    justify-content: space-around;
+
+}
+.btn-alineacion{
+width: 30%;
+font-size: 1em;
+}
+/* .panel-imagen{
+    display:none;
+} */
