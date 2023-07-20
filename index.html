@@ -12,37 +12,98 @@
 </head>
 
 <body>
-    <!-- principio header -->
     <header class="cabecera">
         <h1 class="titulo">Generador de Memes</h1>
         <nav class="botones-nav">
-            <button class="boton btn-img"><i class="fa-solid fa-image icono"></i>imagen</button>
-            <button class="boton btn-txt"><i class="fa-solid fa-a icono"></i>texto</button>
+            <button class="boton btn-img" id="btn-panel-imagen"><i class="fa-solid fa-image icono"></i>imagen</button>
+            <button class="boton btn-txt" id="btn-panel-texto"><i class="fa-solid fa-a icono"></i>texto</button>
             <button class="boton btn-oscuro" id="apagado-btn" aria-label="cambiar a modo oscuro"><i
                     class="fa-solid fa-lightbulb icono"></i>modo oscuro</button>
-            <button class="boton btn-claro" id="prendido-btn" aria-label="cambiar a modo claro"><i
+            <button class="boton btn-claro oculto" id="prendido-btn" aria-label="cambiar a modo claro"><i
                     class="fa-solid fa-lightbulb icono"></i>modo claro</button>
         </nav>
     </header>
-    <!-- fin header -->
-
-    <!-- comienzo main -->
+    
     <main>
-        <div class="container-meme">
+        <div class="container-meme" id="contenedor-meme">
             <p class="t-txt" id="t-txt">TOP TEXT</p>
             <div class="contenedor-img" id="contenedor-img"></div>
             <p class="b-txt" id="b-txt">BOTTOM TEXT</p>
         </div>
-        <button class="btn-descargar" id="btn-descarga"><i class="fa-solid fa-download icono"></i>descargar meme</button>
+        <button class="btn-descargar" id="btn-descargar"><i class="fa-solid fa-download icono"></i>descargar meme</button>
     </main>
-    <!-- fin main -->
-
-    <!-- comienzo aside -->
 
     <aside>
-
-        <div class="panel-texto">
+        <div  class="panel-imagen" id="panel-imagen">
             <buttom class="equis" id="equis" aria-label="cerrar panel">
+                <i class="fas fa-times " aria-hidden="true"></i>
+            </buttom>
+            <h2>imagen</h2>
+
+            <div>
+                <h3>URL</h3>
+                <input type="text" id="url" />
+            </div>
+            <div>
+                <h3>fondo</h3>
+                <div>
+                    <input type="color" id="btn-fondo-img"/>
+                </div>
+                <div>
+                    <select id="tipo-fondo">
+                        <option value="unset" aria-label="opcion ninguno">Ninguno</option>
+                                <option value="lighten" aria-label="opcion aclarar">Aclarar</option>
+                                <option value="darken" aria-label="opcion oscurecer">Oscurecer</option>
+                                <option value="difference" aria-label="opcion diferencia">Diferencia</option>
+                                <option value="luminosity" aria-label="opcion luminosidad">Luminosidad</option>
+                                <option value="multiply" aria-label="opcion multiplicar">Multiplicar</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <h3>filtros</h3>
+                <div>
+                    <lavel for="brillo" >BRILLO</lavel>
+                    <input type="range" min="0" max="1" step="0.1" value="1" id="brillo"/>
+                </div>
+                <div>
+                    <lavel>CONTRASTE</lavel>
+                    <input type="range" min="0" max="1" step="0.1" value="1" id="contraste" />
+                </div>
+                <div>
+                    <lavel>OPACIDAD</lavel>
+                    <input type="range" min="0" max="1" step="0.1" value="1" id="opacidad"/>
+                </div>
+                <div>
+                    <lavel>DESENFOQUE</lavel>
+                    <input type="range" min="0" max="10" step="0.1" value="0" id="desenfoque"/>
+                </div>
+                <div>
+                    <lavel>ESCALA DE GRICES</lavel>
+                    <input type="range" min="0" max="100" step="1" value="0" id="escala-de-grices"/>
+                </div>
+                <div>
+                    <lavel>SEPIA</lavel>
+                    <input type="range" min="0" max="100" step="1" value="0" id="sepia"/>
+                </div>
+                <div>
+                    <lavel>HUE</lavel>
+                    <input type="range" min="0" max="359" step="1" value="0" id="hue"/>
+                </div>
+                <div>
+                    <lavel>SATURADO</lavel>
+                    <input type="range" min="100" max="1000" step="10" value="100"
+                    id="saturado"/>
+                </div>
+                <div>
+                    <lavel>NEGATIVO</lavel>
+                    <input type="range" min="0" max="1" step="0.1" value="0" id="negativo"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-texto oculto" id="panel-texto">
+            <buttom class="equis" id="cerrar-texto" aria-label="cerrar panel">
                 <i class="fas fa-times" aria-hidden="true"></i>
             </buttom>
             <h2>texto</h2>
@@ -70,9 +131,19 @@
             <div>
                 <div>
                     <h3>fuente</h3>
-                    <select id="tipo-fuente"></select>
+                    <select class="fuentes" id="tipo-fuente">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact" selected>Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
                     <div class="contenedor-tamanos">
-                        <input class="tamano-texto" type="number" id="tamano-fuente">
+                        <input class="tamano-texto" type="number" id="tamano-fuente" min="10" max="50" value="25">
                         <div class="alineadores">
                             <button class="btn-alineacion" id="btn-izquierda"><i class="fas fa-align-left"
                                     aria-hidden="true"></i></button>
@@ -84,39 +155,52 @@
                     </div>
                 </div>
                 <div>
-                    <h3>color</h3>
-
-                </div>
-                <div>
-                    <h3>fondo</h3>
+                    <div class="contenedor-color">
+                        <div>
+                            <h3>color</h3>
+                            <input type="color" id="color-txt"/>
+                        </div>
+                        
+                        <div>
+                            <h3>fondo</h3>
+                            <input type="color" id="color-txt-fondo"/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="fondo-transparente">
+                            fondo transparente
+                            <input type="checkbox" class="caja-selectora" id="fondo-transparente" name="fondo-sin-color" />
+                        </label>
+                    </div>
                 </div>
                 <div>
                     <h3>contorno</h3>
+                    <div>
+                        <button id="contorno-ninguno">ninguno</button>
+                        
+                        <button id="contorno-claro">claro</button>
+                        
+                        <button id="contorno-oscuro">oscuro</button>
+                    </div>
                 </div>
                 <div>
-                    <h3>espacio</h3>
-                </div>
+                    <h3>espaciado</h3>
+                    <input type="number" id="btn-espaciado" min="10" max="50" value="35"/>
                 <div>
                     <h3>interlineado</h3>
+                    <select id="btn-interlineado">
+                        <option value="0.8">0.8</option>
+                            <option value="1">1</option>
+                            <option value="1.2" selected>1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                    </select>
                 </div>
             </div>
         </div>
-
-        <div class="panel-imagen">
-            <buttom class="equis" id="equis" aria-label="cerrar panel">
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </buttom>
-            <h2>imagen</h2>
-
-            <div>
-                <h3>URL</h3>
-                <input type="text" id="url" />
-            </div>
-        </div>
-
     </aside>
 
-    <!-- fin aside -->
     <script src="app.js"></script>
 </body>
 

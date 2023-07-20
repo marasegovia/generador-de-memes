@@ -24,11 +24,12 @@
     padding-top: 0.3%;
     padding-bottom: 0.3%;
     font-size: 0.6em;
-
 }
-.btn-oscuro{
+ 
+.oculto{
     display: none;
-}    
+}
+
 
 
 main{
@@ -46,21 +47,24 @@ main{
     height: 70vh;
     width: 30%;
     display: flex;
-    text-align: center;
-    justify-content:center;
+    justify-content:space-between;
     flex-direction: column;
     margin: auto;
     margin-bottom: 1.5%;
+    position:relative ;
+    text-align: center;
 }
 .t-txt, .b-txt{
 height: 15%;
 background-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
 font-size: 2em;
+padding-top: 5%;
 font-weight: bold;
+position: static;
+text-align: center;
+margin: 0%;
 }
+
 .contenedor-img{
     height: 100%;
 }
@@ -86,6 +90,11 @@ aside{
     padding: 1%;
 } 
 
+.fuentes{
+    display: flex;
+    width: 98%;
+    margin: 2px;
+}
 .contenedor-tamanos{
     display: flex;
     width: 100%;
@@ -104,6 +113,3 @@ aside{
 width: 30%;
 font-size: 1em;
 }
-/* .panel-imagen{
-    display:none;
-} */
